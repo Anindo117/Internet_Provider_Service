@@ -11,7 +11,7 @@ const partners = [
 
 export default function Partners() {
   return (
-    <div className="py-36 lg:mt-40">
+    <div className="lg:py-36 py-20 lg:mt-40">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {partners.map((partner) => (

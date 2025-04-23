@@ -27,14 +27,14 @@ export default function Home() {
       <FeaturedShows />
 
       <div className="relative">
-        <div className="absolute inset-x-0 bottom-0 h-96 bg-black" />
+        <div className="absolute inset-x-0 bottom-0 lg:h-96 bg-black" />
         <div className="relative">
           <div className="container mx-auto px-4">
             <div className="flex justify-center">
               <img
                 src="/images/sofa.png"
                 alt="Comfortable viewing"
-                className="max-w-full h-auto -mb-40 z-10"
+                className="max-w-full h-auto lg:-mb-40 -mt-12 z-10"
               />
             </div>
             <div>

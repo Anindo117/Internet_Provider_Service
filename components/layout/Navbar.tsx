@@ -26,10 +26,6 @@ const menuItems: MenuItem[] = [
   {
     title: "About us",
     route: "/about",
-    children: [
-      { title: "Team", route: "/about/team" },
-      { title: "Gallery", route: "/about/gallery" },
-    ],
   },
   {
     title: "Pricing",

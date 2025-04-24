@@ -1,43 +1,26 @@
-import BlogPostDetails from "@/components/blog/BlogPostDetails";
-import BlogSidebar from "@/components/blog/BlogSidebar";
-import { blogPosts } from "@/lib/blog-data";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import BlogList from "@/components/blog/BlogList";
+import BlogSidebar from "@/components/blog/BlogSidebar";
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
+export const metadata: Metadata = {
+  title: "Blog - ISP Service Provider",
+  description:
+    "Latest news and updates about our internet, TV, and mobile services.",
+};
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPosts.find((post) => post.id === parseInt(params.id));
-
-  if (!post) {
-    return {
-      title: "Post Not Found - ISP Service Provider",
-    };
-  }
-
-  return {
-    title: `${post.title} - ISP Service Provider Blog`,
-    description: post.excerpt,
-  };
-}
-
-export default function BlogPostPage({ params }: Props) {
-  const post = blogPosts.find((post) => post.id === parseInt(params.id));
-
-  if (!post) {
-    notFound();
-  }
+export default function BlogPage({
+  searchParams,
+}: {
+  searchParams: { page?: string };
+}) {
+  const currentPage = Number(searchParams.page) || 1;
 
   return (
     <div className="py-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-2/3">
-            <BlogPostDetails post={post} />
+            <BlogList currentPage={currentPage} />
           </div>
           <div className="lg:w-1/3">
             <BlogSidebar />

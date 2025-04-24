@@ -134,6 +134,7 @@ export default function Navbar() {
                     width={120}
                     height={60}
                     className="h-14 w-auto"
+                    priority
                   />
                 </Link>
                 <button className="navbar-toggle" onClick={toggleMenu}>

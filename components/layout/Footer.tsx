@@ -45,6 +45,7 @@ export default function Footer() {
                 width={100}
                 height={60}
                 className="mx-auto mb-4"
+                priority
               />
             </Link>
             <p className="text-gray-400 mb-8">

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import AddressForm from "@/components/home/AddressForm";
 import FeaturedSection from "@/components/home/FeaturedSection";
 import FeaturedShows from "@/components/home/FeaturedShows";

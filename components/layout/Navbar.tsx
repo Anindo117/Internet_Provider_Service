@@ -27,11 +27,13 @@ const menuItems: MenuItem[] = [
     title: "About us",
     route: "/about",
     children: [
-      { title: "Testimonials", route: "/about/testimonials" },
       { title: "Team", route: "/about/team" },
-      { title: "FAQ", route: "/about/faq" },
       { title: "Gallery", route: "/about/gallery" },
     ],
+  },
+  {
+    title: "Pricing",
+    route: "/pricing",
   },
   {
     title: "Products",

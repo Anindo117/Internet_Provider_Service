@@ -9,6 +9,7 @@ import PricingPlans from "@/components/home/PricingPlans";
 import ServiceBlocks from "@/components/home/ServiceBlocks";
 import SpecialOffer from "@/components/home/SpecialOffer";
 import Testimonials from "@/components/home/Testimonials";
+import ProductList from "@/components/products/ProductList";
 
 export default function Home() {
   return (
@@ -50,6 +51,7 @@ export default function Home() {
       </div>
 
       <Partners />
+      <ProductList />
     </div>
   );
 }

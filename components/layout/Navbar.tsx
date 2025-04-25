@@ -34,10 +34,6 @@ const menuItems: MenuItem[] = [
   {
     title: "Products",
     route: "/products",
-    children: [
-      { title: "Shop", route: "/shop" },
-      { title: "My account", route: "/my-account" },
-    ],
   },
   {
     title: "Blog",

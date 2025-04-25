@@ -1,5 +1,6 @@
 import AboutHero from "@/components/about/AboutHero";
 import AboutServices from "@/components/about/AboutServices";
+import Gallery from "@/components/about/Gallery";
 import Testimonials from "@/components/home/Testimonials";
 import { Metadata } from "next";
 
@@ -13,9 +14,8 @@ export default function AboutPage() {
     <div>
       <AboutHero />
       <AboutServices />
-      <div>
-        <Testimonials />
-      </div>
+      <Testimonials />
+      <Gallery />
     </div>
   );
 }

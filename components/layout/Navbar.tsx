@@ -47,10 +47,10 @@ const menuItems: MenuItem[] = [
     title: "Contacts",
     route: "/contacts",
   },
-  {
-    title: "Get Started",
-    route: "/get-started",
-  },
+  // {
+  //   title: "Get Started",
+  //   route: "/get-started",
+  // },
 ];
 
 function NavItem({ href, text, active, dropdown, className }: NavItemProps) {
@@ -109,9 +109,8 @@ export default function Navbar() {
                 <Image
                   src="/images/logo.png"
                   alt="IPS Company"
-                  width={100}
+                  width={60}
                   height={50}
-                  className="h-14 w-auto"
                 />
               </Link>
             </div>
@@ -125,12 +124,10 @@ export default function Navbar() {
               <div className="lg:hidden toggle-wrap flex justify-between items-center w-full pb-4">
                 <Link href="/" className="logo">
                   <Image
-                    src="/images/logo_1x.png"
-                    alt="ISP Company"
-                    width={120}
+                    src="/images/logo.png"
+                    alt="IPS Company"
+                    width={60}
                     height={60}
-                    className="h-14 w-auto"
-                    priority
                   />
                 </Link>
                 <button className="navbar-toggle" onClick={toggleMenu}>

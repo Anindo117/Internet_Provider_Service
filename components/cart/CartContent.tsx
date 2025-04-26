@@ -4,22 +4,11 @@ import { useCartStore } from "@/lib/store";
 import { CreditCard, Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function CartContent() {
-  const { items, removeItem, updateQuantity, total, clearCart } =
-    useCartStore();
-  const [isProcessing, setIsProcessing] = useState(false);
-
-  const handleCheckout = async () => {
-    setIsProcessing(true);
-    // Here you would typically integrate with a payment provider
-    setTimeout(() => {
-      clearCart();
-      setIsProcessing(false);
-      alert("Thank you for your purchase!");
-    }, 2000);
-  };
+  const router = useRouter();
+  const { items, removeItem, updateQuantity, total } = useCartStore();
 
   if (items.length === 0) {
     return (
@@ -117,12 +106,11 @@ export default function CartContent() {
           </div>
 
           <button
-            onClick={handleCheckout}
-            disabled={isProcessing}
-            className="w-full py-4 bg-red-600 text-white rounded flex items-center justify-center gap-2 hover:bg-red-700 transition-colors disabled:bg-gray-400"
+            onClick={() => router.push("/checkout")}
+            className="w-full py-4 bg-red-600 text-white rounded flex items-center justify-center gap-2 hover:bg-red-700 transition-colors"
           >
             <CreditCard className="w-5 h-5" />
-            {isProcessing ? "Processing..." : "Proceed to Payment"}
+            Proceed to Checkout
           </button>
 
           <p className="text-sm text-gray-500 text-center mt-4">

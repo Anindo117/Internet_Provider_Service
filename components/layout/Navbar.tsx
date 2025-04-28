@@ -1,8 +1,10 @@
-import { Menu, Search, ShoppingBasket, User, X } from "lucide-react";
+import { useCartStore } from "@/lib/store";
+import { Menu, Search, ShoppingBasket, UserRoundPlus, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import LoginModal from "../auth/LoginModal";
 
 export interface MenuItem {
   title: string;
@@ -43,10 +45,6 @@ const menuItems: MenuItem[] = [
     title: "Contacts",
     route: "/contacts",
   },
-  // {
-  //   title: "Get Started",
-  //   route: "/get-started",
-  // },
 ];
 
 function NavItem({ href, text, active, dropdown, className }: NavItemProps) {
@@ -90,116 +88,135 @@ function NavItem({ href, text, active, dropdown, className }: NavItemProps) {
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const items = useCartStore((state) => state.items);
+
+  const cartQuantity = items.reduce((total, item) => total + item.quantity, 0);
 
   const pathName = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className="header-wrapper header-h1 header-parallax wrapper-navbar-layout-transparent bg-gray-950 text-white">
-      <div id="nav-wrapper" className="navbar-layout-transparent">
-        <nav className="navbar">
-          <div className="container mx-auto px-4 lg:py-5 flex items-center justify-between">
-            <div className="navbar-logo">
-              <Link href="/" className="logo">
-                <Image
-                  src="/images/logo.png"
-                  alt="IPS Company"
-                  width={60}
-                  height={50}
-                />
-              </Link>
-            </div>
-
-            <div
-              className={`navbar-collapse ${
-                isMenuOpen ? "block" : "hidden"
-              }  lg:flex lg:items-center lg:justify-between`}
-              id="navbar"
-            >
-              <div className="lg:hidden toggle-wrap flex justify-between items-center w-full pb-4">
+    <>
+      <div className="header-wrapper header-h1 header-parallax wrapper-navbar-layout-transparent bg-gray-950 text-white">
+        <div id="nav-wrapper" className="navbar-layout-transparent">
+          <nav className="navbar">
+            <div className="container mx-auto px-4 lg:py-5 flex items-center justify-between">
+              <div className="navbar-logo">
                 <Link href="/" className="logo">
                   <Image
                     src="/images/logo.png"
                     alt="IPS Company"
                     width={60}
-                    height={60}
+                    height={50}
                   />
                 </Link>
-                <button className="navbar-toggle" onClick={toggleMenu}>
-                  <X className="w-6 h-6" />
+              </div>
+
+              <div
+                className={`navbar-collapse ${
+                  isMenuOpen ? "block" : "hidden"
+                }  lg:flex lg:items-center lg:justify-between`}
+                id="navbar"
+              >
+                <div className="lg:hidden toggle-wrap flex justify-between items-center w-full pb-4">
+                  <Link href="/" className="logo">
+                    <Image
+                      src="/images/logo.png"
+                      alt="IPS Company"
+                      width={60}
+                      height={60}
+                    />
+                  </Link>
+                  <button className="navbar-toggle" onClick={toggleMenu}>
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+
+                <div>
+                  <ul className="nav navbar-nav font-semibold flex flex-col lg:flex-row">
+                    {menuItems.map((item) => (
+                      <NavItem
+                        key={item.title}
+                        href={item.route || "#"}
+                        text={item.title}
+                        dropdown={item.children?.map((child) => ({
+                          href: child.route || "#",
+                          text: child.title,
+                        }))}
+                        className={
+                          pathName === item.route
+                            ? "text-red-600"
+                            : "hover:text-red-600"
+                        }
+                      />
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="ltx-navbar-icons hidden lg:flex gap-3">
+                <ul className="flex items-center gap-3">
+                  <li className="ltx-fa-icon ltx-nav-profile mx-1">
+                    <Link href="/my-account">
+                      <UserRoundPlus className="w-5 h-5" />
+                    </Link>
+                  </li>
+                  <li className="ltx-fa-icon ltx-nav-cart mx-1">
+                    <Link
+                      href="/cart"
+                      className="ltx-cart flex justify-center items-center"
+                      title="View your shopping cart"
+                    >
+                      <ShoppingBasket className="w-5 h-5" />
+                      {cartQuantity > 0 && (
+                        <span className=" bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                          {cartQuantity}
+                        </span>
+                      )}
+                    </Link>
+                  </li>
+                  <li className="ltx-fa-icon ltx-nav-search mx-1">
+                    <div className="top-search">
+                      <a href="#" className="top-search-ico">
+                        <Search className="w-5 h-5" />
+                      </a>
+                      <input
+                        placeholder="Search"
+                        value=""
+                        type="text"
+                        className="hidden"
+                      />
+                    </div>
+                  </li>
+                </ul>
+                <button
+                  onClick={() => setIsLoginModalOpen(true)}
+                  className="px-6 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition duration-300"
+                >
+                  Sign in
                 </button>
               </div>
 
-              <div>
-                <ul className="nav navbar-nav font-semibold flex flex-col lg:flex-row">
-                  {menuItems.map((item) => (
-                    <NavItem
-                      key={item.title}
-                      href={item.route || "#"}
-                      text={item.title}
-                      dropdown={item.children?.map((child) => ({
-                        href: child.route || "#",
-                        text: child.title,
-                      }))}
-                      className={
-                        pathName === item.route
-                          ? "text-red-600"
-                          : "hover:text-red-600"
-                      }
-                    />
-                  ))}
-                </ul>
+              <div className="navbar-controls lg:hidden">
+                <button
+                  type="button"
+                  className="navbar-toggle"
+                  onClick={toggleMenu}
+                >
+                  <Menu className="w-6 h-6" />
+                </button>
               </div>
             </div>
-
-            <div className="ltx-navbar-icons hidden lg:block">
-              <ul className="flex items-center gap-3">
-                <li className="ltx-fa-icon ltx-nav-profile mx-1">
-                  <Link href="/my-account">
-                    <User className="w-5 h-5" />
-                  </Link>
-                </li>
-                <li className="ltx-fa-icon ltx-nav-cart mx-1">
-                  <Link
-                    href="/cart"
-                    className="ltx-cart flex justify-center items-center"
-                    title="View your shopping cart"
-                  >
-                    <ShoppingBasket className="w-5 h-5" />
-                    <span className="cart-contents header-cart-count count h-5 w-5 flex justify-center items-center rounded-full bg-red-500">
-                      0
-                    </span>
-                  </Link>
-                </li>
-                <li className="ltx-fa-icon ltx-nav-search mx-1">
-                  <div className="top-search">
-                    <a href="#" className="top-search-ico">
-                      <Search className="w-5 h-5" />
-                    </a>
-                    <input
-                      placeholder="Search"
-                      value=""
-                      type="text"
-                      className="hidden"
-                    />
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <div className="navbar-controls lg:hidden">
-              <button
-                type="button"
-                className="navbar-toggle"
-                onClick={toggleMenu}
-              >
-                <Menu className="w-6 h-6" />
-              </button>
-            </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
-    </div>
+
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={() => setIsLoginModalOpen(false)}
+      />
+    </>
   );
 }

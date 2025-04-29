@@ -1,6 +1,6 @@
-import { Metadata } from "next";
 import BlogList from "@/components/blog/BlogList";
 import BlogSidebar from "@/components/blog/BlogSidebar";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog - ISP Service Provider",
@@ -13,7 +13,7 @@ export default function BlogPage({
 }: {
   searchParams: { page?: string };
 }) {
-  const currentPage = Number(searchParams.page) || 1;
+  const currentPage = Number() || 1;
 
   return (
     <div className="py-16">

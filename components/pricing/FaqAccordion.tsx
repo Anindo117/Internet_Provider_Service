@@ -37,16 +37,16 @@ export default function FaqAccordion() {
     <Accordion.Root
       type="single"
       collapsible
-      className="container mx-auto lg:max-w-xl space-y-5 lg:my-40 "
+      className="container mx-auto lg:max-w-xl space-y-5 my-20 lg:my-40 "
     >
-      <div className="text-center mb-12">
+      <div className="text-center ">
         <p className="text-red-600 font-semibold mb-2">
-          OUR SPECIALISTS ANSWER
+          Our Specialist's Answer
         </p>
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-600">
           Frequently Asked Questions
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-400">
+        <p className="max-w-2xl mx-auto text-gray-400 text-sm md:text-base px-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
           bibendum, est ac faucibus hendrerit, mauris ante viverra urna, in
           elementum urna est ut ligula.

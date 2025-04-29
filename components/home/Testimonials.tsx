@@ -100,7 +100,7 @@ export default function Testimonials() {
                     </div>
                     <h4 className="text-xl font-bold">{testimonial.name}</h4>
                   </div>
-                  <p className="text-gray-600 text-center">
+                  <p className="text-gray-600 text-center text-sm md:text-base">
                     {testimonial.text}
                   </p>
                 </div>

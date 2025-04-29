@@ -65,10 +65,10 @@ export default function PricingPlans() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <p className="text-red-600 font-semibold mb-2">Tariffs</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">
             Choose your plan
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-400">
+          <p className="max-w-2xl text-sm md:text-base mx-auto text-gray-400">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
             bibendum, est ac faucibus hendrerit, mauris ante viverra urna, in
             elementum urna est ut ligula.

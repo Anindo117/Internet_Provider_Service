@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface Slide {
   id: number;
@@ -16,32 +16,36 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    title: 'Your Favorite',
-    subtitle: 'Shows and Movies',
-    description: 'Duis eu commodo massa. Integer volutpat imperdiet libero vel laoreet. Sed euismod a ligula quis suscipit. Suspendisse potenti. Proin porta tristique urna, id commodo.',
-    image: '/images/Slide01.jpg'
+    title: "Your Favorite",
+    subtitle: "Shows and Movies",
+    description:
+      "Duis eu commodo massa. Integer volutpat imperdiet libero vel laoreet. Sed euismod a ligula quis suscipit. Suspendisse potenti. Proin porta tristique urna, id commodo.",
+    image: "/images/Slide01.jpg",
   },
   {
     id: 2,
-    title: 'UEFA & Worldcup',
-    subtitle: 'Football Stream',
-    description: 'Duis eu commodo massa. Integer volutpat imperdiet libero vel laoreet. Sed euismod a ligula quis suscipit. Suspendisse potenti. Proin porta tristique urna, id commodo.',
-    image: '/images/Slide02.jpg'
+    title: "UEFA & Worldcup",
+    subtitle: "Football Stream",
+    description:
+      "Duis eu commodo massa. Integer volutpat imperdiet libero vel laoreet. Sed euismod a ligula quis suscipit. Suspendisse potenti. Proin porta tristique urna, id commodo.",
+    image: "/images/Slide02.jpg",
   },
   {
     id: 3,
-    title: 'Online Cinema',
-    subtitle: 'in Your Smartphone',
-    description: 'Duis eu commodo massa. Integer volutpat imperdiet libero vel laoreet. Sed euismod a ligula quis suscipit. Suspendisse potenti. Proin porta tristique urna, id commodo.',
-    image: '/images/Slide03.jpg'
+    title: "Online Cinema",
+    subtitle: "in Your Smartphone",
+    description:
+      "Duis eu commodo massa. Integer volutpat imperdiet libero vel laoreet. Sed euismod a ligula quis suscipit. Suspendisse potenti. Proin porta tristique urna, id commodo.",
+    image: "/images/Slide03.jpg",
   },
   {
     id: 4,
-    title: 'Last Seasons',
-    subtitle: 'of Popular Shows',
-    description: 'Duis eu commodo massa. Integer volutpat imperdiet libero vel laoreet. Sed euismod a ligula quis suscipit. Suspendisse potenti. Proin porta tristique urna, id commodo.',
-    image: '/images/Slide04.jpg'
-  }
+    title: "Last Seasons",
+    subtitle: "of Popular Shows",
+    description:
+      "Duis eu commodo massa. Integer volutpat imperdiet libero vel laoreet. Sed euismod a ligula quis suscipit. Suspendisse potenti. Proin porta tristique urna, id commodo.",
+    image: "/images/Slide04.jpg",
+  },
 ];
 
 export default function HeroSlider() {
@@ -87,7 +91,7 @@ export default function HeroSlider() {
         >
           <div className="container mx-auto px-4 h-full flex flex-col justify-center">
             <div className="max-w-3xl mt-20 lg:mt-0">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 transition-all duration-700 ease-in-out       transform translate-y-0">
+              <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-white mb-4 transition-all duration-700 ease-in-out       transform translate-y-0">
                 <span className="text-red-600">{slide.title}</span>
                 <br />
                 {slide.subtitle}
@@ -96,12 +100,16 @@ export default function HeroSlider() {
                 {slide.description}
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="px-6 py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition duration-300">
-                  Read more
-                </button>
-                <button className="px-6 py-3 bg-yellow-600 text-white font-semibold rounded hover:bg-yellow-700 transition duration-300">
-                  Start now
-                </button>
+                <Link href="/about">
+                  <button className="px-4 py-2 md:px-6 md:py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition duration-300">
+                    Read more
+                  </button>
+                </Link>
+                <Link href="/pricing">
+                  <button className="px-4 py-2 md:px-6 md:py-3 bg-yellow-600 text-white font-semibold rounded hover:bg-yellow-700 transition duration-300">
+                    Start now
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,12 @@
-import { useCartStore } from "@/lib/store";
-import { Menu, Search, ShoppingBasket, UserRoundPlus, X } from "lucide-react";
+import { useAuthStore, useCartStore } from "@/lib/store";
+import {
+  LogOut,
+  Menu,
+  Search,
+  ShoppingBasket,
+  UserRoundPlus,
+  X,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -89,9 +96,15 @@ function NavItem({ href, text, active, dropdown, className }: NavItemProps) {
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const { isLoggedIn, logout } = useAuthStore();
   const items = useCartStore((state) => state.items);
 
   const cartQuantity = items.reduce((total, item) => total + item.quantity, 0);
+
+  const handleLogout = () => {
+    logout();
+    setIsLoginModalOpen(false);
+  };
 
   const pathName = usePathname();
 
@@ -191,12 +204,22 @@ export default function Navbar() {
                     </div>
                   </li>
                 </ul>
-                <button
-                  onClick={() => setIsLoginModalOpen(true)}
-                  className="px-6 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition duration-300"
-                >
-                  Sign in
-                </button>
+                {isLoggedIn ? (
+                  <button
+                    onClick={handleLogout}
+                    className="px-4 py-2 text-red-600 hover:text-red-700 border rounded-md border-red-500 hover:scale-95 transition-colors flex gap-3"
+                  >
+                    <LogOut className="w-5 h-5" />
+                    Logout
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => setIsLoginModalOpen(true)}
+                    className="px-4 py-2 text-red-600 hover:text-red-700 border rounded-md border-red-500 hover:scale-95 transition-colors"
+                  >
+                    Sign In
+                  </button>
+                )}
               </div>
 
               <div className="navbar-controls lg:hidden">

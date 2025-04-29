@@ -46,7 +46,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
             <X className="w-6 h-6" />
           </button>
 
-          <LoginForm />
+          <LoginForm onSuccess={onClose} />
         </div>
       </div>
     </div>

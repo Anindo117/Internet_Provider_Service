@@ -36,8 +36,12 @@ export default function ServiceBlocks() {
             >
               <div className="flex-shrink-0 mr-4">{service.icon}</div>
               <div>
-                <h4 className="text-xl font-bold mb-2">{service.title}</h4>
-                <p className="text-gray-600 mb-2">{service.description}</p>
+                <h4 className="text-lg md:text-xl font-bold mb-2">
+                  {service.title}
+                </h4>
+                <p className="text-gray-600 mb-2 text-sm md:text-base">
+                  {service.description}
+                </p>
                 <p className="text-red-600 font-semibold">{service.price}</p>
               </div>
             </div>

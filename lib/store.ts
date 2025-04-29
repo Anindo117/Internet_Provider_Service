@@ -23,6 +23,12 @@ interface CartStore {
   total: () => number;
 }
 
+interface AuthStore {
+  isLoggedIn: boolean;
+  login: () => void;
+  logout: () => void;
+}
+
 export const useCartStore = create<CartStore>()(
   persist(
     (set, get) => ({
@@ -63,6 +69,19 @@ export const useCartStore = create<CartStore>()(
     }),
     {
       name: "cart-storage",
+    }
+  )
+);
+
+export const useAuthStore = create<AuthStore>()(
+  persist(
+    (set) => ({
+      isLoggedIn: false,
+      login: () => set({ isLoggedIn: true }),
+      logout: () => set({ isLoggedIn: false }),
+    }),
+    {
+      name: "auth-storage",
     }
   )
 );

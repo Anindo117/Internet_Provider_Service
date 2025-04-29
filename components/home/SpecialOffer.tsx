@@ -11,7 +11,7 @@ export default function SpecialOffer() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
               Test our TV and Internet
               <br />
               just for <span className="text-red-600">1$ per month</span>
@@ -46,7 +46,7 @@ export default function SpecialOffer() {
               </h6>
             </div>
 
-            <button className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md transition duration-300">
+            <button className="px-4 py-2 md:px-6 md:py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md transition duration-300">
               Test now
             </button>
           </div>

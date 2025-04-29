@@ -37,7 +37,7 @@ const Gallery = () => {
           Our satisfaction
         </h2>
       </div>
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 lg:my-32">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 my-14 lg:my-32 px-4">
         {images.map((image) => (
           <div key={image.id} className="relative">
             <Image

@@ -1,5 +1,7 @@
 "use client";
 
+import { useToast } from "@/hooks/use-toast";
+import { useAuthStore } from "@/lib/store";
 import { ArrowRight, Lock, Mail } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -10,8 +12,14 @@ interface FormData {
   password: string;
 }
 
-export default function LoginForm() {
+interface LoginFormProps {
+  onSuccess?: () => void;
+}
+
+export default function LoginForm({ onSuccess }: LoginFormProps) {
   const router = useRouter();
+  const { toast } = useToast();
+  const login = useAuthStore((state) => state.login);
   const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
@@ -22,10 +30,22 @@ export default function LoginForm() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate login
+    // Simulate login API call
     setTimeout(() => {
       setIsLoading(false);
-      // Handle login logic here
+      // Update auth state
+      login();
+      // Show success toast
+      toast({
+        title: "Welcome back!",
+        description: "You have successfully logged in.",
+        duration: 3000,
+      });
+      // Call onSuccess callback if provided (for modal)
+      if (onSuccess) {
+        onSuccess();
+      }
+      // Navigate to home page
       router.push("/");
     }, 1500);
   };
@@ -106,7 +126,7 @@ export default function LoginForm() {
               ) : (
                 <>
                   Sign In
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 h-5" />
                 </>
               )}
             </button>

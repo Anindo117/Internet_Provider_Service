@@ -94,7 +94,7 @@ export default function BlogList({ currentPage }: BlogListProps) {
                 </span>
                 <span className="flex items-center gap-1">
                   <MessageCircle className="w-4 h-4" />
-                  {post.comments} Comments
+                  {post.comments}
                 </span>
                 <span className="text-red-600">{post.category}</span>
               </div>
@@ -108,11 +108,13 @@ export default function BlogList({ currentPage }: BlogListProps) {
                 </Link>
               </h2>
 
-              <p className="text-gray-600 mb-4">{post.excerpt}</p>
+              <p className="text-gray-600 mb-4 text-sm md:text-base">
+                {post.excerpt}
+              </p>
 
               <Link
                 href={`/blog/${post.id}`}
-                className="inline-block px-6 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition duration-300"
+                className="inline-block px-4 py-2 md:px-6 md:py-3 bg-red-600 text-white rounded hover:bg-red-700 transition duration-300"
               >
                 Read More
               </Link>

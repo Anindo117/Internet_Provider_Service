@@ -126,7 +126,7 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
               ) : (
                 <>
                   Sign In
-                  <ArrowRight className="ml-2 h-5 h-5" />
+                  <ArrowRight className="ml-2 h-5" />
                 </>
               )}
             </button>

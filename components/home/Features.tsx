@@ -9,27 +9,27 @@ import {
 
 const features = [
   {
-    icon: <Gauge className="w-16 h-16 text-red-600" />,
+    icon: <Gauge className="w-16 h-16 text-[#709D06]" />,
     title: "Ultra-speed Connection",
   },
   {
-    icon: <Tv className="w-16 h-16 text-red-600" />,
+    icon: <Tv className="w-16 h-16 text-[#709D06]" />,
     title: "250+ World Channels",
   },
   {
-    icon: <Wifi className="w-16 h-16 text-red-600" />,
+    icon: <Wifi className="w-16 h-16 text-[#709D06]" />,
     title: "Free Installation",
   },
   {
-    icon: <Film className="w-16 h-16 text-red-600" />,
+    icon: <Film className="w-16 h-16 text-[#709D06]" />,
     title: "4K and 8K Quality",
   },
   {
-    icon: <DollarSign className="w-16 h-16 text-red-600" />,
+    icon: <DollarSign className="w-16 h-16 text-[#709D06]" />,
     title: "Flexible Tariff Plans",
   },
   {
-    icon: <HeadphonesIcon className="w-16 h-16 text-red-600" />,
+    icon: <HeadphonesIcon className="w-16 h-16 text-[#709D06]" />,
     title: "Fast Support 24/7",
   },
 ];

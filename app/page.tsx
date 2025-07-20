@@ -23,7 +23,7 @@ export default function Home() {
       <FeaturedSection />
       <Features />
       <PricingPlans />
-      <AddressForm />
+      {/* <AddressForm /> */}
       <Testimonials />
       <SpecialOffer />
       <FeaturedShows />
@@ -50,7 +50,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Partners />
+      {/* <Partners /> */}
       <ProductList />
     </div>
   );

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className="ltx-footer-wrapper bg-black text-white">
-      <div className="subscribe-wrapper py-10 bg-gray-900">
+      {/* <div className="subscribe-wrapper py-10 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
@@ -33,7 +33,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="footer-widgets py-12">
         <div className="container mx-auto px-4">

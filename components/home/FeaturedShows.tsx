@@ -94,7 +94,7 @@ export default function FeaturedShows() {
     <div className="py-16 md:py-24 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <p className="text-red-600 font-semibold mb-2">Interesting</p>
+          <p className="text-[#709D06] font-semibold mb-2">Interesting</p>
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
             Featured Shows
           </h2>
@@ -143,14 +143,14 @@ export default function FeaturedShows() {
 
           <button
             onClick={() => handleScroll("left")}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-red-600 text-white hover:bg-red-700 transition-all"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#709D06] text-white hover:bg-[#688720] transition-all"
             disabled={scrollPosition <= 0}
           >
             <ArrowLeft size={20} />
           </button>
           <button
             onClick={() => handleScroll("right")}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-red-600 text-white hover:bg-red-700 transition-all"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#709D06] text-white hover:bg-[#688720] transition-all"
             disabled={scrollPosition >= maxScroll}
           >
             <ArrowRight size={20} />

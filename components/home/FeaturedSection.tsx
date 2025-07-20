@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FeaturedSection() {
   return (
@@ -32,10 +33,11 @@ export default function FeaturedSection() {
                 <h6 className="font-semibold">Online Channels</h6>
               </div>
             </div>
-
+            <Link href="/pricing">
             <button className="px-4 py-2 md:px-6 md:py-3 bg-[#709D06] text-white font-semibold rounded-md hover:bg-yellow-500 transition duration-300">
               Read more
             </button>
+            </Link>
           </div>
 
           <div className="order-1 md:order-2">

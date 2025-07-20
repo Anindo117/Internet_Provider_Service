@@ -6,55 +6,113 @@ const plans = [
   {
     type: "Internet",
     title: "Easy Surfing",
-    icons: [<Wifi key="wifi" className="w-6 h-6 text-red-600" />],
+    icons: [<Wifi key="wifi" className="w-6 h-6 text-[#709D06]" />],
+    features: [
+      "Up to 30Mbps",
+      "Night Turbo-Speed",
+      "Extra Speed on VAS",
+      "Buffer less Unlimited devices",
+      "24/7 support",
+    ],
+    price: "700 Tk",
+    popular: false,
+  },
+  {
+    type: "Internet",
+    title: "Impression",
+    icons: [<Wifi key="wifi" className="w-6 h-6 text-[#709D06]" />],
+    features: [
+      "Up to 40Mbps",
+      "Night Turbo-Speed",
+      "Extra Speed on VAS",
+      "Buffer less Unlimited devices",
+      "24/7 support",
+    ],
+    price: "800 Tk",
+    popular: false,
+  },
+  {
+    type: "Internet",
+    title: "Home Comfort",
+    icons: [<Wifi key="wifi" className="w-6 h-6 text-[#709D06]" />],
     features: [
       "Up to 50Mbps",
       "Night Turbo-Speed",
-      "WiFi router",
-      "Unlimited devices",
+      "Extra Speed on VAS",
+      "Buffer less Unlimited devices",
+      "24/7 support",
     ],
-    price: "$24.99",
-    popular: false,
-  },
-  {
-    type: "TV",
-    title: "Impression",
-    icons: [<Tv key="tv" className="w-6 h-6 text-red-600" />],
-    features: ["200+ chanels", "5 adult chanels", "TV-Box", "Unlimited rooms"],
-    price: "$18.00",
-    popular: false,
-  },
-  {
-    type: "Internet + TV",
-    title: "Home Comfort",
-    icons: [
-      <Wifi key="wifi" className="w-6 h-6 text-red-600" />,
-      <Tv key="tv" className="w-6 h-6 text-red-600" />,
-    ],
-    features: [
-      "Up to 100Mbps",
-      "200+ chanels",
-      "WiFi router",
-      "Unlimited devices",
-    ],
-    price: "$37.99",
+    price: "1000 Tk",
     popular: true,
   },
   {
-    type: "Internet + TV + Phone",
+    type: "Internet",
     title: "Premium Plan",
-    icons: [
-      <Wifi key="wifi" className="w-6 h-6 text-red-600" />,
-      <Tv key="tv" className="w-6 h-6 text-red-600" />,
-      <Phone key="phone" className="w-6 h-6 text-red-600" />,
-    ],
+    icons: [<Wifi key="wifi" className="w-6 h-6 text-[#709D06]" />],
     features: [
-      "Up to 1000Mbps",
-      "250+ chanels",
-      "WiFi router and TV Box",
-      "Phone",
+      "Up to 60Mbps",
+      "Night Turbo-Speed",
+      "Extra Speed on VAS",
+      "Buffer less Unlimited devices",
+      "24/7 support",
     ],
-    price: "$49.00",
+    price: "1200 Tk",
+    popular: false,
+  },
+  {
+    type: "Internet",
+    title: "Impression",
+    icons: [<Wifi key="wifi" className="w-6 h-6 text-[#709D06]" />],
+    features: [
+      "Up to 70Mbps",
+      "Night Turbo-Speed",
+      "Extra Speed on VAS",
+      "Buffer less Unlimited devices",
+      "24/7 support",
+    ],
+    price: "1500 Tk",
+    popular: false,
+  },
+  {
+    type: "Internet",
+    title: "Impression",
+    icons: [<Wifi key="wifi" className="w-6 h-6 text-[#709D06]" />],
+    features: [
+      "Up to 80Mbps",
+      "Night Turbo-Speed",
+      "Extra Speed on VAS",
+      "Buffer less Unlimited devices",
+      "24/7 support",
+    ],
+    price: "2000 Tk",
+    popular: false,
+  },
+  {
+    type: "Internet",
+    title: "Impression",
+    icons: [<Wifi key="wifi" className="w-6 h-6 text-[#709D06]" />],
+    features: [
+      "Up to 90Mbps",
+      "Night Turbo-Speed",
+      "Extra Speed on VAS",
+      "Buffer less Unlimited devices",
+      "24/7 support",
+    ],
+    price: "2500 Tk",
+    popular: false,
+  },
+  {
+    type: "Internet",
+    title: "Impression",
+    icons: [<Wifi key="wifi" className="w-6 h-6 text-[#709D06]" />],
+    features: [
+      "Up to 100Mbps",
+      "Night Turbo-Speed",
+      "Extra Speed on VAS",
+      "Buffer less Unlimited devices",
+      "24/7 support",
+    ],
+    price: "3000 Tk",
     popular: false,
   },
 ];
@@ -64,7 +122,7 @@ export default function PricingPlans() {
     <div className="py-16 md:py-24 bg-black text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <p className="text-red-600 font-semibold mb-2">Tariffs</p>
+          <p className="text-[#709D06] font-semibold mb-2">Tariffs</p>
           <h2 className="text-2xl md:text-4xl font-bold mb-4">
             Choose your plan
           </h2>
@@ -122,12 +180,20 @@ export default function PricingPlans() {
               </div>
 
               <Link href="/my-account">
-                <button className="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md transition duration-300">
+                <button className="w-full py-3 hover:bg-[#709D06] bg-white text-black hover:text-white font-semibold rounded-md transition duration-300">
                   Get started
                 </button>
               </Link>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <Link href="/pricing">
+            <button className="px-9 py-3 bg-[#709D06] hover:bg-red-600 text-white font-semibold rounded-md transition duration-300">
+              Explore More
+            </button>
+          </Link>
         </div>
       </div>
     </div>

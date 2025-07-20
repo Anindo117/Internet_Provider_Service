@@ -14,7 +14,7 @@ export default function SpecialOffer() {
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
               Test our TV and Internet
               <br />
-              just for <span className="text-red-600">1$ per month</span>
+              just for <span className="text-red-600">1000 Tk per month</span>
             </h2>
 
             <p className="text-gray-200 mb-6">
@@ -25,7 +25,7 @@ export default function SpecialOffer() {
             </p>
 
             <div className="flex items-center mb-8">
-              <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+              <div className="w-12 h-12 rounded-full bg-[#709D06] flex items-center justify-center mr-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 text-white"
@@ -42,18 +42,18 @@ export default function SpecialOffer() {
                 </svg>
               </div>
               <h6 className="text-white font-semibold">
-                Free WiFi router included
+                Free WiFi router onu included
               </h6>
             </div>
 
-            <button className="px-4 py-2 md:px-6 md:py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md transition duration-300">
+            <button className="px-4 py-2 md:px-6 md:py-3 bg-[#709D06] hover:bg-[#688720] text-white font-semibold rounded-md transition duration-300">
               Test now
             </button>
           </div>
 
           <div className="hidden lg:flex justify-end ">
             <div className="relative">
-              <div className="bg-yellow-600 text-black font-bold px-10 py-10 rounded-full absolute bottom-28 right-16 -rotate-12 text-center">
+              <div className="bg-yellow-600 text-white font-bold px-10 py-10 rounded-full absolute bottom-28 right-16 -rotate-12 text-center">
                 <p className="text-2xl uppercase">
                   special
                   <br />

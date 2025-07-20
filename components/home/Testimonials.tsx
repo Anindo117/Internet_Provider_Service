@@ -68,7 +68,7 @@ export default function Testimonials() {
     <div className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <p className="text-red-600 font-semibold mb-2">Testimonials</p>
+          <p className="text-[#709D06] font-semibold mb-2">Testimonials</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What our clients say
           </h2>
@@ -110,13 +110,13 @@ export default function Testimonials() {
 
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-red-600 text-white hover:bg-red-700 focus:outline-none transition-all"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-[#709D06] text-white hover:bg-[#688720] focus:outline-none transition-all"
           >
             <ArrowLeft size={20} />
           </button>
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-red-600 text-white hover:bg-red-700 focus:outline-none transition-all"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-[#709D06] text-white hover:bg-[#688720] focus:outline-none transition-all"
           >
             <ArrowRight size={20} />
           </button>

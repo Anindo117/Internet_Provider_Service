@@ -2,25 +2,25 @@ import { Wifi, Tv, Phone } from "lucide-react";
 
 const services = [
   {
-    icon: <Wifi className="w-12 h-12 text-red-600" />,
+    icon: <Wifi className="w-12 h-12 text-[#709D06]" />,
     title: "Broadband",
     description:
       "Unlimited high speed internet for the whole family and devices",
-    price: "from $24.99",
+    
   },
   {
-    icon: <Tv className="w-12 h-12 text-red-600" />,
+    icon: <Tv className="w-12 h-12 text-[#709D06]" />,
     title: "Satelite TV",
     description:
       "Over 200 entertainment channels with movies, cartoons, sport and shows",
-    price: "from $18",
+    
   },
   {
-    icon: <Phone className="w-12 h-12 text-red-600" />,
+    icon: <Phone className="w-12 h-12 text-[#709D06]" />,
     title: "Mobility",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum.",
-    price: "from $29.99",
+    
   },
 ];
 
@@ -42,7 +42,6 @@ export default function ServiceBlocks() {
                 <p className="text-gray-600 mb-2 text-sm md:text-base">
                   {service.description}
                 </p>
-                <p className="text-red-600 font-semibold">{service.price}</p>
               </div>
             </div>
           ))}

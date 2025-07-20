@@ -161,8 +161,8 @@ export default function Navbar() {
                         }))}
                         className={
                           pathName === item.route
-                            ? "text-red-600"
-                            : "hover:text-red-600"
+                            ? "text-[#709D06]"
+                            : "hover:text-[#709D06]"
                         }
                       />
                     ))}
@@ -216,7 +216,7 @@ export default function Navbar() {
                 ) : (
                   <button
                     onClick={() => setIsLoginModalOpen(true)}
-                    className="px-4 py-2 text-red-600 hover:text-red-700 border rounded-md border-red-500 hover:scale-95 transition-colors"
+                    className="px-4 py-2 hover:text-[#709D06] text-white border rounded-md border-white hover:scale-95 transition-colors"
                   >
                     Sign In
                   </button>

@@ -25,7 +25,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="bg-red-600 hover:bg-yellow-500 hover:text-black text-white px-6 py-3 font-semibold rounded-r-md sm:rounded-l-none rounded-l-md transition duration-300"
+                  className="bg-[#709D06] hover:bg-yellow-500 hover:text-black text-white px-6 py-3 font-semibold rounded-r-md sm:rounded-l-none rounded-l-md transition duration-300"
                 >
                   Get Started
                 </button>
@@ -40,10 +40,10 @@ export default function Footer() {
           <div className="text-center max-w-xl mx-auto">
             <Link href="/">
               <Image
-                src="/images/logo.png"
-                alt="ISP Company"
-                width={100}
-                height={60}
+                src="/logo/logo.png"
+                alt="mkz online"
+                width={200}
+                height={200}
                 className="mx-auto mb-4"
                 priority
               />
@@ -68,8 +68,8 @@ export default function Footer() {
         <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
           <p>
             © All Rights Reserved - {new Date().getFullYear()} -
-            <Link href="/" className="hover:text-red-600 ml-1">
-              ISP Company
+            <Link href="/" className="ml-1 hover:text-[#709D06]">
+              MKZ Online
             </Link>
           </p>
         </div>
@@ -82,7 +82,7 @@ function SocialIcon({ icon }: { icon: React.ReactNode }) {
   return (
     <a
       href="#"
-      className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition duration-300"
+      className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#709D06] transition duration-300"
     >
       {icon}
     </a>

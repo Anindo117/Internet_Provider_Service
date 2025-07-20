@@ -32,7 +32,7 @@ const Gallery = () => {
   return (
     <>
       <div className="text-center mb-12">
-        <p className="text-red-600 font-semibold mb-2">Gallery</p>
+        <p className="text-[#709D06] font-semibold mb-2">Gallery</p>
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Our satisfaction
         </h2>

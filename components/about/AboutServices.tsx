@@ -3,21 +3,21 @@ import Link from "next/link";
 
 const services = [
   {
-    icon: <Wifi className="w-12 h-12 text-red-600" />,
+    icon: <Wifi className="w-12 h-12 text-[#709D06]" />,
     title: "Broadband Connection",
     description:
       "Consectetur adipiscing elit duis tristique sollicitudin nibh purus viverra sit.",
     link: "/services/broadband",
   },
   {
-    icon: <Tv className="w-12 h-12 text-red-600" />,
+    icon: <Tv className="w-12 h-12 text-[#709D06]" />,
     title: "DTH TV Connections",
     description:
       "Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet.",
     link: "/services/tv",
   },
   {
-    icon: <Radio className="w-12 h-12 text-red-600" />,
+    icon: <Radio className="w-12 h-12 text-[#709D06]" />,
     title: "Wifi Connection",
     description:
       "Gravida quis blandit turpis cursus in hac habitasse in iaculis nunc sed augue lacus.",
@@ -37,12 +37,12 @@ export default function AboutServices() {
             >
               <div className="flex justify-center mb-6">{service.icon}</div>
               <h3 className="text-xl font-bold mb-4">
-                <span className="text-red-600">|</span> {service.title}
+                <span className="text-[#709D06]">|</span> {service.title}
               </h3>
               <p className="text-gray-600 mb-6">{service.description}</p>
               <Link
                 href={service.link}
-                className="inline-flex items-center text-black font-semibold hover:text-red-600 transition-colors"
+                className="inline-flex items-center text-black font-semibold hover:text-[#709D06] transition-colors"
               >
                 Read More
                 <span className="ml-2"> →</span>

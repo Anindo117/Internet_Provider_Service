@@ -16,7 +16,7 @@ export default function AboutPage() {
     <div>
       <AboutHero />
       <AboutServices />
-      <Clients />
+      {/* <Clients /> */}
       <Testimonials />
       <Gallery />
     </div>

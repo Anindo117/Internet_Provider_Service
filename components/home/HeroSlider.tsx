@@ -17,7 +17,7 @@ const slides: Slide[] = [
   {
     id: 1,
     title: "Your Favorite",
-    subtitle: "Shows and Movies",
+    subtitle: "Fastest Connectivity",
     description:
       "Duis eu commodo massa. Integer volutpat imperdiet libero vel laoreet. Sed euismod a ligula quis suscipit. Suspendisse potenti. Proin porta tristique urna, id commodo.",
     image: "/images/Slide01.jpg",
@@ -40,11 +40,11 @@ const slides: Slide[] = [
   },
   {
     id: 4,
-    title: "Last Seasons",
-    subtitle: "of Popular Shows",
+    title: "Best packages",
+    subtitle: "",
     description:
-      "Duis eu commodo massa. Integer volutpat imperdiet libero vel laoreet. Sed euismod a ligula quis suscipit. Suspendisse potenti. Proin porta tristique urna, id commodo.",
-    image: "/images/Slide04.jpg",
+      "",
+    image: "/images/Slide04.png",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function HeroSlider() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/about">
-                  <button className="px-4 py-2 md:px-6 md:py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition duration-300">
+                  <button className="px-4 py-2 md:px-6 md:py-3 bg-[#709D06] text-white font-semibold rounded hover:bg-[#688720] transition duration-300">
                     Read more
                   </button>
                 </Link>

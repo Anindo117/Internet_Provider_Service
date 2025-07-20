@@ -116,13 +116,14 @@ export default function Navbar() {
         <div id="nav-wrapper" className="navbar-layout-transparent">
           <nav className="navbar">
             <div className="container mx-auto px-4 lg:py-5 flex items-center justify-between">
+              {/* Logo */}
               <div className="navbar-logo">
                 <Link href="/" className="logo">
                   <Image
-                    src="/images/logo.png"
+                    src="/logo/logo.png"
                     alt="IPS Company"
-                    width={60}
-                    height={50}
+                    width={130}
+                    height={150}
                   />
                 </Link>
               </div>

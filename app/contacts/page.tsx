@@ -14,7 +14,7 @@ export default function ContactPage() {
       <div className="row centered relative lg:mt-12">
         <h2 className="container mx-auto text-center text-3xl md:text-4xl font-bold mb-4 z-10">
           We Offer The{" "}
-          <span className="text-red-600">
+          <span className="text-[#709D06]">
             Highest-Quality <br />
             Network{" "}
           </span>

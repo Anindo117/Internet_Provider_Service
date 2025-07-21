@@ -15,7 +15,7 @@ export default function GoogleMap() {
 
       const { Map } = await loader.importLibrary("maps");
 
-      const position = { lat: 40.7058253, lng: -74.1180862 };
+      const position = { lat: 23.8741, lng: 90.3984 };
 
       if (mapRef.current) {
         const map = new Map(mapRef.current, {

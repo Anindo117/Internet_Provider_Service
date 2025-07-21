@@ -27,7 +27,7 @@ export default function ContactForm() {
                 <input
                   type="text"
                   placeholder="Your name"
-                  className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-600"
+                  className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#709D06]"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -40,7 +40,7 @@ export default function ContactForm() {
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-600"
+                  className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#709D06]"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -53,7 +53,7 @@ export default function ContactForm() {
                 <textarea
                   placeholder="Message"
                   rows={6}
-                  className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-600"
+                  className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#709D06]"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -66,7 +66,7 @@ export default function ContactForm() {
             <div className="text-center">
               <button
                 type="submit"
-                className="px-8 py-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition duration-300"
+                className="px-8 py-3 bg-[#709D06] text-white font-semibold rounded-md hover:hover:bg-[#688720] transition duration-300"
               >
                 Submit
               </button>

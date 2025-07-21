@@ -11,14 +11,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div className="inner-page text-page margin-top">
-      <div className="row centered relative">
-        <div className="flex justify-center">
-          <img
-            src="/images/sofa.png"
-            alt="Comfortable viewing"
-            className="max-w-full h-auto lg:-mb-44 -mt-12"
-          />
-        </div>
+      <div className="row centered relative lg:mt-12">
         <h2 className="container mx-auto text-center text-3xl md:text-4xl font-bold mb-4 z-10">
           We Offer The{" "}
           <span className="text-red-600">

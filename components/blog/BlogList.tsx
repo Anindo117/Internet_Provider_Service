@@ -102,7 +102,7 @@ export default function BlogList({ currentPage }: BlogListProps) {
               <h2 className="text-2xl font-bold mb-3">
                 <Link
                   href={`/blog/${post.id}`}
-                  className="hover:text-red-600 transition duration-300"
+                  className="hover:text-[#709D06] transition duration-300"
                 >
                   {post.title}
                 </Link>
@@ -114,7 +114,7 @@ export default function BlogList({ currentPage }: BlogListProps) {
 
               <Link
                 href={`/blog/${post.id}`}
-                className="inline-block px-4 py-2 md:px-6 md:py-3 bg-red-600 text-white rounded hover:bg-red-700 transition duration-300"
+                className="inline-block px-4 py-2 md:px-6 md:py-3 bg-[#709D06] text-white hover:bg-[#688720] transition duration-300"
               >
                 Read More
               </Link>
@@ -130,7 +130,7 @@ export default function BlogList({ currentPage }: BlogListProps) {
             className={`p-2 rounded ${
               currentPage === 1
                 ? "text-gray-400 cursor-not-allowed"
-                : "text-red-600 hover:bg-red-50"
+                : "text-[#709D06] hover:bg-red-50"
             }`}
             aria-disabled={currentPage === 1}
           >
@@ -156,7 +156,7 @@ export default function BlogList({ currentPage }: BlogListProps) {
             className={`p-2 rounded ${
               currentPage === totalPages
                 ? "text-gray-400 cursor-not-allowed"
-                : "text-red-600 hover:bg-red-50"
+                : "text-[#709D06] hover:bg-red-50"
             }`}
             aria-disabled={currentPage === totalPages}
           >

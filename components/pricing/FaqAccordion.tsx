@@ -40,7 +40,7 @@ export default function FaqAccordion() {
       className="container mx-auto lg:max-w-xl space-y-5 my-20 lg:my-40 "
     >
       <div className="text-center ">
-        <p className="text-red-600 font-semibold mb-2">
+        <p className="text-[#709D06] font-semibold mb-2">
           Our Specialist's Answer
         </p>
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-600">
@@ -58,14 +58,14 @@ export default function FaqAccordion() {
           value={`item-${i}`}
           className={cn(
             "bg-white rounded-xl shadow-md px-6 py-4 transition-all duration-300",
-            faq.answer && "border-l-4 border-red-500"
+            faq.answer && "border-l-4 border-[#709D06]"
           )}
         >
           <Accordion.Header>
             <Accordion.Trigger
               className={cn(
                 "flex justify-between items-center w-full text-left font-semibold text-lg",
-                faq.answer ? "hover:text-red-500" : "text-neutral-500"
+                faq.answer ? "hover:text-[#709D06]" : "text-neutral-500"
               )}
             >
               {faq.question}

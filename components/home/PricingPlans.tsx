@@ -122,7 +122,7 @@ export default function PricingPlans() {
     <div className="py-16 md:py-24 bg-black text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <p className="text-[#709D06] font-semibold mb-2">Tariffs</p>
+          <p className="text-[#709D06] font-semibold mb-2">Packages</p>
           <h2 className="text-2xl md:text-4xl font-bold mb-4">
             Choose your plan
           </h2>

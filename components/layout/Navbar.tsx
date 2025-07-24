@@ -44,12 +44,12 @@ const menuItems: MenuItem[] = [
     title: "Products",
     route: "/products",
   },
+  // {
+  //   title: "Blog",
+  //   route: "/blog",
+  // },
   {
-    title: "Blog",
-    route: "/blog",
-  },
-  {
-    title: "Contacts",
+    title: "Contact",
     route: "/contacts",
   },
 ];
@@ -175,20 +175,6 @@ export default function Navbar() {
                   <li className="ltx-fa-icon ltx-nav-profile mx-1">
                     <Link href="/my-account">
                       <UserRoundPlus className="w-5 h-5" />
-                    </Link>
-                  </li>
-                  <li className="ltx-fa-icon ltx-nav-cart mx-1">
-                    <Link
-                      href="/cart"
-                      className="ltx-cart flex justify-center items-center"
-                      title="View your shopping cart"
-                    >
-                      <ShoppingBasket className="w-5 h-5" />
-                      {cartQuantity > 0 && (
-                        <span className=" bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                          {cartQuantity}
-                        </span>
-                      )}
                     </Link>
                   </li>
                   <li className="ltx-fa-icon ltx-nav-search mx-1">

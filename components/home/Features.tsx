@@ -1,36 +1,45 @@
 import {
+  Cloud,
   DollarSign,
   Film,
   Gauge,
+  Globe,
   HeadphonesIcon,
   Tv,
   Wifi,
 } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
     icon: <Gauge className="w-16 h-16 text-[#709D06]" />,
     title: "Ultra-speed Connection",
+    url: "http://www.speedtest.com.sg"
   },
   {
-    icon: <Tv className="w-16 h-16 text-[#709D06]" />,
-    title: "250+ World Channels",
+    icon: <Globe className="w-16 h-16 text-[#709D06]" />,
+    title: "Domain",
+    url:"https://mkzdcp.supersite2.srsportal.com"
   },
   {
-    icon: <Wifi className="w-16 h-16 text-[#709D06]" />,
-    title: "Free Installation",
+    icon: <Cloud className="w-16 h-16 text-[#709D06]" />,
+    title: "Hosting",
+    url:"https://mkzdcp.supersite2.srsportal.com"
   },
   {
     icon: <Film className="w-16 h-16 text-[#709D06]" />,
     title: "4K and 8K Quality",
+    url:"/"
   },
   {
     icon: <DollarSign className="w-16 h-16 text-[#709D06]" />,
     title: "Flexible Tariff Plans",
+    url:"/pricing"
   },
   {
     icon: <HeadphonesIcon className="w-16 h-16 text-[#709D06]" />,
     title: "Fast Support 24/7",
+    url:"/contacts"
   },
 ];
 
@@ -42,9 +51,11 @@ export default function Features() {
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="mb-4">{feature.icon}</div>
-              <h6 className="font-semibold text-sm md:text-lg">
-                {feature.title}
-              </h6>
+              <Link href={feature.url} target={feature.url.startsWith('http') ? '_blank' : undefined} rel={feature.url.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                <h6 className="font-semibold text-sm md:text-lg hover:text-[#709D06]">
+                  {feature.title}
+                </h6>
+              </Link>
             </div>
           ))}
         </div>

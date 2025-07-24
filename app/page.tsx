@@ -19,16 +19,16 @@ export default function Home() {
       <div className="container mx-auto px-4 relative">
         <ServiceBlocks />
       </div>
-
+      <PricingPlans limit={8} />
       <FeaturedSection />
       <Features />
-      <PricingPlans />
+      
       {/* <AddressForm /> */}
       <Testimonials />
-      <SpecialOffer />
+      {/* <SpecialOffer /> */}
       <FeaturedShows />
 
-      <div className="relative">
+      {/* <div className="relative">
         <div className="absolute inset-x-0 bottom-0 lg:h-96 bg-black" />
         <div className="relative">
           <div className="container mx-auto px-4">
@@ -48,10 +48,23 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div> */}
+
+      <div
+        className="relative flex items-center justify-center h-64 lg:h-[70vh] mb-24"
+        style={{
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/router-1.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <h1 className="text-3xl md:text-5xl font-bold text-white text-center z-10 drop-shadow-lg">
+          Get Routers at Best Prices!
+        </h1>
       </div>
 
       {/* <Partners /> */}
-      <ProductList />
+      {/* <ProductList /> */}
     </div>
   );
 }

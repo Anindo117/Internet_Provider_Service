@@ -1,4 +1,4 @@
-import { Wifi, Tv, Phone } from "lucide-react";
+import { Wifi, Tv, Phone, Cloud, Globe } from "lucide-react";
 
 const services = [
   {
@@ -9,17 +9,17 @@ const services = [
     
   },
   {
-    icon: <Tv className="w-12 h-12 text-[#709D06]" />,
-    title: "Satelite TV",
+    icon: <Globe className="w-12 h-12 text-[#709D06]" />,
+    title: "Domain",
     description:
-      "Over 200 entertainment channels with movies, cartoons, sport and shows",
+      "Get your desired Business name and make it more professional",
     
   },
   {
-    icon: <Phone className="w-12 h-12 text-[#709D06]" />,
-    title: "Mobility",
+    icon: <Cloud className="w-12 h-12 text-[#709D06]" />,
+    title: "Hosting",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum.",
+      "Hosting, in essence, is the service that makes your website accessible on the internet",
     
   },
 ];

@@ -9,22 +9,22 @@ const packages = [
     id: 1,
     name: "Basic Internet",
     speed: "50 Mbps",
-    price: 24.99,
+    price: 1000,
     description: "Perfect for browsing and streaming",
   },
   {
     id: 2,
     name: "Premium Internet",
     speed: "100 Mbps",
-    price: 37.99,
-    description: "Ideal for gaming and 4K streaming",
+    price: 3000,
+    description: "Ideal for 4K streaming",
   },
   {
     id: 3,
     name: "Ultimate Bundle",
-    speed: "200 Mbps",
-    price: 49.99,
-    description: "Internet + TV + Phone services",
+    speed: "120 Mbps",
+    price: 4000,
+    description: "Internet + Game + Phone services",
   },
 ];
 
@@ -35,7 +35,6 @@ interface FormData {
   phone: string;
   address: string;
   city: string;
-  state: string;
   zipCode: string;
   selectedPackage: string;
 }
@@ -50,7 +49,6 @@ export default function RegistrationForm() {
     phone: "",
     address: "",
     city: "",
-    state: "",
     zipCode: "",
     selectedPackage: "",
   });
@@ -83,7 +81,6 @@ export default function RegistrationForm() {
         phone: "",
         address: "",
         city: "",
-        state: "",
         zipCode: "",
         selectedPackage: "",
       });
@@ -95,7 +92,7 @@ export default function RegistrationForm() {
       {/* Package Selection */}
       <div className="bg-white p-6 rounded-lg shadow-lg">
         <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-          <Package className="w-5 h-5 text-red-600" />
+          <Package className="w-5 h-5 text-[#709D06]" />
           Select Package
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -104,8 +101,8 @@ export default function RegistrationForm() {
               key={pkg.id}
               className={`relative flex flex-col p-4 border-2 rounded-lg cursor-pointer transition-all ${
                 formData.selectedPackage === pkg.name
-                  ? "border-red-600 bg-red-50"
-                  : "border-gray-200 hover:border-red-300"
+                  ? "border-[#709D06] bg-red-50"
+                  : "border-gray-200 hover:border-[#709D06]"
               }`}
             >
               <input
@@ -117,8 +114,8 @@ export default function RegistrationForm() {
                 className="absolute opacity-0"
               />
               <div className="text-lg font-bold mb-2">{pkg.name}</div>
-              <div className="text-red-600 font-bold mb-1">{pkg.speed}</div>
-              <div className="text-2xl font-bold mb-2">${pkg.price}/mo</div>
+              <div className="text-[#709D06] font-bold mb-1">{pkg.speed}</div>
+              <div className="text-2xl font-bold mb-2">{pkg.price} Tk/mo</div>
               <div className="text-sm text-gray-600">{pkg.description}</div>
             </label>
           ))}
@@ -128,7 +125,7 @@ export default function RegistrationForm() {
       {/* Personal Information */}
       <div className="bg-white p-6 rounded-lg shadow-lg">
         <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-          <User className="w-5 h-5 text-red-600" />
+          <User className="w-5 h-5 text-[#709D06]" />
           Personal Information
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -142,7 +139,7 @@ export default function RegistrationForm() {
               required
               value={formData.firstName}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-600 focus:border-transparent"
+              className="w-full px-4 py-2 border rounded-md focus:ring-2  focus:border-transparent"
             />
           </div>
           <div>
@@ -155,7 +152,7 @@ export default function RegistrationForm() {
               required
               value={formData.lastName}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-600 focus:border-transparent"
+              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:border-transparent"
             />
           </div>
           <div>
@@ -168,7 +165,7 @@ export default function RegistrationForm() {
               required
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-600 focus:border-transparent"
+              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:border-transparent"
             />
           </div>
           <div>
@@ -181,7 +178,7 @@ export default function RegistrationForm() {
               required
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-600 focus:border-transparent"
+              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:border-transparent"
             />
           </div>
         </div>
@@ -190,7 +187,7 @@ export default function RegistrationForm() {
       {/* Installation Address */}
       <div className="bg-white p-6 rounded-lg shadow-lg">
         <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-          <MapPin className="w-5 h-5 text-red-600" />
+          <MapPin className="w-5 h-5 text-[#709D06]" />
           Installation Address
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -204,7 +201,7 @@ export default function RegistrationForm() {
               required
               value={formData.address}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-600 focus:border-transparent"
+              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:border-transparent"
             />
           </div>
           <div>
@@ -217,20 +214,7 @@ export default function RegistrationForm() {
               required
               value={formData.city}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-600 focus:border-transparent"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              State
-            </label>
-            <input
-              type="text"
-              name="state"
-              required
-              value={formData.state}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-600 focus:border-transparent"
+              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:border-transparent"
             />
           </div>
           <div>
@@ -243,7 +227,7 @@ export default function RegistrationForm() {
               required
               value={formData.zipCode}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-600 focus:border-transparent"
+              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:border-transparent"
             />
           </div>
         </div>
@@ -252,7 +236,7 @@ export default function RegistrationForm() {
       <button
         type="submit"
         disabled={isSubmitting || !formData.selectedPackage}
-        className="w-full py-4 bg-red-600 text-white rounded-md flex items-center justify-center gap-2 hover:bg-red-700 transition-colors disabled:bg-gray-400"
+        className="px-9 py-4 bg-[#709D06] text-white rounded-md flex items-center justify-center gap-2 hover:bg-[#688720] transition-colors disabled:bg-gray-400"
       >
         {isSubmitting ? "Processing..." : <>Submit Registration</>}
       </button>

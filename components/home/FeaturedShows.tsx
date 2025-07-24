@@ -1,7 +1,8 @@
 "use client";
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const shows = [
@@ -91,17 +92,15 @@ export default function FeaturedShows() {
   };
 
   return (
-    <div className="py-16 md:py-24 bg-black">
+    <div className="py-16 md:py-24 text-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <p className="text-[#709D06] font-semibold mb-2">Interesting</p>
-          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">
             Featured Shows
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-400 text-sm md:text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            bibendum, est ac faucibus hendrerit, mauris ante viverra urna, in
-            elementum urna est ut ligula.
+          <p className="lg:max-w-2xl mx-auto text-gray-400 text-sm md:text-base">
+            Enjoy the limitless movie, series, drama experience on our best channels. More server more happiness!
           </p>
         </div>
 
@@ -155,6 +154,11 @@ export default function FeaturedShows() {
           >
             <ArrowRight size={20} />
           </button>
+        </div>
+        <div className="relative lg:my-28">
+          <Link href="https://bdmdb.com/more_ftp_site.php" className="absolute right-1/2 bottom-0 transform -translate-y-1/2 translate-x-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#709D06] text-white hover:scale-110">
+            <ArrowRight size={20} />
+          </Link>
         </div>
       </div>
     </div>

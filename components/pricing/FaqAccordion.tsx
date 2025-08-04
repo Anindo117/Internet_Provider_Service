@@ -11,6 +11,11 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
+    question: "Why choose MKZ Online?",
+    answer:
+      "We are really passionate about our network and pride ourselves on achieving consummate satisfaction for our customers. We form strong synergetic relationship with our customer based on mutual respect. We provide complete consulting, design and planning services in order to create a customized network solution that precisely aligns with your unique networking needs. Our Call-Center operates 24 x 7 x 365 to proactively monitor your network performance to ensure that your network infrastructure is a strategic asset.",
+  },
+  {
     question: "Which Type Of Connection Works Best For Wifi?",
     answer:
       "Felis eget nunc lobortis mattis aliquam faucibus purus in. Ut tortor pretium viverra suspendisse potenti nullam ac tortor. Dui id ornare arcu odio. In massa tempor nec feugiat. Tellus orci ac auctor augue.",
@@ -43,14 +48,10 @@ export default function FaqAccordion() {
         <p className="text-[#709D06] font-semibold mb-2">
           Our Specialist's Answer
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-600">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-neutral-600">
           Frequently Asked Questions
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-400 text-sm md:text-base px-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-          bibendum, est ac faucibus hendrerit, mauris ante viverra urna, in
-          elementum urna est ut ligula.
-        </p>
+        
       </div>
       {faqs.map((faq, i) => (
         <Accordion.Item

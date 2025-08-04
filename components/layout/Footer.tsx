@@ -99,9 +99,9 @@ export default function Footer() {
       {/* Copyright & Socials */}
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between py-4 gap-4">
         <div className="text-white/30 text-sm text-center md:text-left">
-          © 2025 All rights reserved by{" "}
+          © 2025 All rights reserved by MKZ Online & designed by{" "}
           <a href="https://anindoahmed.vercel.app/" target="_blank">
-            solo developer
+            Anindo
           </a>
         </div>
 

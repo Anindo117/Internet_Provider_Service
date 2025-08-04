@@ -128,45 +128,59 @@ export default function Navbar() {
                 </Link>
               </div>
 
-              <div
-                className={`navbar-collapse ${
-                  isMenuOpen ? "block" : "hidden"
-                }  lg:flex lg:items-center lg:justify-between`}
-                id="navbar"
-              >
-                <div className="lg:hidden toggle-wrap flex justify-between items-center w-full pb-4">
-                  <Link href="/" className="logo">
-                    <Image
-                      src="/images/logo.png"
-                      alt="IPS Company"
-                      width={60}
-                      height={60}
-                    />
-                  </Link>
-                  <button className="navbar-toggle" onClick={toggleMenu}>
-                    <X className="w-6 h-6" />
-                  </button>
-                </div>
-
-                <div>
-                  <ul className="nav navbar-nav font-semibold flex flex-col lg:flex-row">
-                    {menuItems.map((item) => (
-                      <NavItem
-                        key={item.title}
-                        href={item.route || "#"}
-                        text={item.title}
-                        dropdown={item.children?.map((child) => ({
-                          href: child.route || "#",
-                          text: child.title,
-                        }))}
-                        className={
-                          pathName === item.route
-                            ? "text-[#709D06]"
-                            : "hover:text-[#709D06]"
-                        }
+              {/* Mobile Side Drawer Navigation */}
+              <div>
+                {/* Overlay */}
+                {isMenuOpen && (
+                  <div
+                    className="fixed inset-0 bg-black bg-opacity-40 z-40 lg:hidden"
+                    onClick={toggleMenu}
+                  />
+                )}
+                {/* Side Drawer */}
+                <div
+                  className={`
+                    fixed top-0 left-0 h-full w-64 bg-gray-950 text-white z-50 transform transition-transform duration-300 ease-in-out
+                    ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}
+                    lg:static lg:translate-x-0 lg:w-auto lg:bg-transparent lg:relative lg:h-auto
+                  `}
+                  id="navbar"
+                >
+                  <div className="lg:hidden flex justify-between items-center w-full px-4 py-4 border-b border-gray-800">
+                    <span className="font-bold text-lg">
+                      <Link href="/" className="logo">
+                      <Image
+                        src="/logo/logo.png"
+                        alt="IPS Company"
+                        width={100}
+                        height={100}
                       />
-                    ))}
-                  </ul>
+                    </Link>
+                    </span>
+                    <button className="navbar-toggle" onClick={toggleMenu}>
+                      <X className="w-6 h-6" />
+                    </button>
+                  </div>
+                  <div className="px-4 py-4 lg:p-0">
+                    <ul className="nav navbar-nav text-sm font-semibold flex flex-col lg:flex-row">
+                      {menuItems.map((item) => (
+                        <NavItem
+                          key={item.title}
+                          href={item.route || "#"}
+                          text={item.title}
+                          dropdown={item.children?.map((child) => ({
+                            href: child.route || "#",
+                            text: child.title,
+                          }))}
+                          className={
+                            pathName === item.route
+                              ? "text-[#709D06]"
+                              : "hover:text-[#709D06]"
+                          }
+                        />
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
 
@@ -202,7 +216,7 @@ export default function Navbar() {
                 ) : (
                   <button
                     onClick={() => setIsLoginModalOpen(true)}
-                    className="px-4 py-2 hover:text-[#709D06] text-white border rounded-md border-white hover:scale-95 transition-colors"
+                    className="px-4 py-2 hover:text-[#709D06] text-sm text-white border rounded-md border-white hover:scale-95 transition-colors"
                   >
                     Sign In
                   </button>

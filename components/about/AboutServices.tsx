@@ -1,27 +1,24 @@
-import { Radio, Tv, Wifi } from "lucide-react";
+import { Expand, Radio, Target, Tv, Wifi } from "lucide-react";
 import Link from "next/link";
 
 const services = [
   {
-    icon: <Wifi className="w-12 h-12 text-[#709D06]" />,
-    title: "Broadband Connection",
+    icon: <Expand className="w-12 h-12 text-[#709D06]" />,
+    title: "Our Mission",
     description:
-      "Consectetur adipiscing elit duis tristique sollicitudin nibh purus viverra sit.",
-    link: "/services/broadband",
+      "All clients are important to us. Our mission is to serve you with an efficient, top-quality implementation at the lowest cost. Our purpose is to deliver and keep quality all over the entire process. We are committed to providing the best possible service to our clients.",
   },
   {
-    icon: <Tv className="w-12 h-12 text-[#709D06]" />,
-    title: "DTH TV Connections",
+    icon: <Target className="w-12 h-12 text-[#709D06]" />,
+    title: "Our Vision",
     description:
-      "Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet.",
-    link: "/services/tv",
+      "To be the leading provider of communication solutions in the region, offering innovative and reliable services that meet the evolving needs of our clients.",
   },
   {
     icon: <Radio className="w-12 h-12 text-[#709D06]" />,
-    title: "Wifi Connection",
+    title: "Our Values",
     description:
-      "Gravida quis blandit turpis cursus in hac habitasse in iaculis nunc sed augue lacus.",
-    link: "/services/wifi",
+      "Achieve from you a high-level understanding of your requirements. Empathize your business and its value intention. Empathize on your business model & your competitor or customer environment. Work with you to identify your exact desires and build a process-driven framework to lodge each and every requirement you may have within the service terms proposed.",
   },
 ];
 
@@ -39,14 +36,7 @@ export default function AboutServices() {
               <h3 className="text-xl font-bold mb-4">
                 <span className="text-[#709D06]">|</span> {service.title}
               </h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <Link
-                href={service.link}
-                className="inline-flex items-center text-black font-semibold hover:text-[#709D06] transition-colors"
-              >
-                Read More
-                <span className="ml-2"> →</span>
-              </Link>
+              <p className="text-gray-600 mb-6 text-sm">{service.description}</p>
             </div>
           ))}
         </div>

@@ -37,13 +37,13 @@ export default function Layout({ children }: LayoutProps) {
       
       <a 
         href="#" 
-        className="ltx-go-top fixed bottom-8 right-8 w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg transform transition-transform hover:scale-110 hover:bg-red-700"
+        className="ltx-go-top fixed bottom-8 right-8 lg:w-12 lg:h-12 w-8 h-8 rounded-full bg-[#709D06] text-white flex items-center justify-center shadow-lg transform transition-transform hover:scale-110 hover:bg-[#709D06]"
         onClick={(e) => {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
         </svg>
       </a>

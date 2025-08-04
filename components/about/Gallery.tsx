@@ -4,7 +4,7 @@ const images = [
   {
     id: 1,
     src: "/images/gallery-1.jpg",
-    alt: "Broadband",
+    alt: "Movie",
   },
   {
     id: 2,
@@ -25,6 +25,11 @@ const images = [
     id: 5,
     src: "/images/gallery-3.jpg",
     alt: "Gaming",
+  },
+  {
+    id: 6,
+    src: "/images/gallery-6.jpg",
+    alt: "High Speed",
   },
 ];
 

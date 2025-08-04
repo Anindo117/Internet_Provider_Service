@@ -191,7 +191,7 @@ export default function Navbar() {
                       <UserRoundPlus className="w-5 h-5" />
                     </Link>
                   </li>
-                  <li className="ltx-fa-icon ltx-nav-search mx-1">
+                  {/* <li className="ltx-fa-icon ltx-nav-search mx-1">
                     <div className="top-search">
                       <a href="#" className="top-search-ico">
                         <Search className="w-5 h-5" />
@@ -203,7 +203,7 @@ export default function Navbar() {
                         className="hidden"
                       />
                     </div>
-                  </li>
+                  </li> */}
                 </ul>
                 {isLoggedIn ? (
                   <button

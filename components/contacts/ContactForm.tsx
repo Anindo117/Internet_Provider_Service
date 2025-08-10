@@ -103,7 +103,7 @@ export default function ContactForm() {
       if (response.ok) {
         setSubmitStatus({
           type: "success",
-          message: "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+          message: "Thank you! Your message has been sent successfully.",
         });
         
         // Reset form

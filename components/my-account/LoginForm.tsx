@@ -14,9 +14,10 @@ interface FormData {
 
 interface LoginFormProps {
   onSuccess?: () => void;
+  onOpenRegister?: () => void;
 }
 
-export default function LoginForm({ onSuccess }: LoginFormProps) {
+export default function LoginForm({ onSuccess, onOpenRegister }: LoginFormProps) {
   const router = useRouter();
   const { toast } = useToast();
   const login = useAuthStore((state) => state.login);
@@ -73,7 +74,7 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="block w-full pl-10 pr-4 py-3 border border-gray-200 rounded-md focus:ring-2 focus:ring-red-600 focus:border-transparent"
+                  className="block w-full pl-10 pr-4 py-3 border text-black border-gray-200 rounded-md focus:ring-1 focus:border-transparent"
                   placeholder="Enter your email"
                 />
               </div>
@@ -94,7 +95,7 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
                   onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
                   }
-                  className="block w-full pl-10 pr-4 py-3 border border-gray-200 rounded-md focus:ring-2 focus:ring-red-600 focus:border-transparent"
+                  className="block w-full pl-10 pr-4 py-3 border text-black border-gray-200 rounded-md focus:ring-1 focus:border-transparent"
                   placeholder="Enter your password"
                 />
               </div>
@@ -134,12 +135,19 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
 
           <p className="mt-8 text-center text-sm text-gray-600">
             Don&apos;t have an account?{" "}
-            <Link
-              href="/register"
-              className="font-medium text-red-600 hover:text-red-500"
-            >
-              Sign up now
-            </Link>
+            {onOpenRegister ? (
+              <button
+                type="button"
+                onClick={onOpenRegister}
+                className="font-medium text-red-600 hover:text-red-500"
+              >
+                Sign up now
+              </button>
+            ) : (
+              <Link href="/registration" className="font-medium text-red-600 hover:text-red-500">
+                Sign up now
+              </Link>
+            )}
           </p>
         </div>
       </div>

@@ -12,7 +12,7 @@ export default function ProductsPage() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-[#709D06] font-semibold mb-2">Online Store</p>
-          <h1 className="text-4xl md:text-5xl font-bold">Popular Devices</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">Popular Routers</h1>
         </div>
         <ProductList />
       </div>

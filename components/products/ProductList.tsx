@@ -9,65 +9,49 @@ import { useState } from "react";
 const products: Product[] = [
   {
     id: 1,
-    name: "WiFi Streaming Router",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...",
-    price: 3500.0,
-    originalPrice: 4000.0,
+    name: "TP-Link TL-WR840N 300Mbps Wireless Router",
+    description: "High-speed WiFi router for seamless streaming and gaming experience",
+    price: 1400.0,
+    originalPrice: 1580.0,
     image: "/images/router-1.jpg",
   },
   {
     id: 2,
-    name: "Waterproof Bluetooth Speaker",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...",
-    price: 1900.0,
-    image: "/images/speaker-1.jpg",
-  },
-  {
-    id: 3,
-    name: "Dual Antenna Home Router",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...",
-    price: 1900.0,
+    name: "D-Link R04 N300 300mbps Smart Router",
+    description: "High-speed WiFi router for seamless streaming and gaming experience",
+    price: 12700.0,
+    originalPrice: 1350.0,
     image: "/images/router-2.jpg",
   },
   {
+    id: 3,
+    name: "Mercusys MW306R 300Mbps WiFi Router",
+    description: "High-speed WiFi router for seamless streaming and gaming experience",
+    price: 1000.0,
+    originalPrice: 1109.0,
+    image: "/images/router-3.jpg",
+  },
+  {
     id: 4,
-    name: "Top TV box with Remote Control",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...",
-    price: 3200.0,
-    image: "/images/tv-box-1.jpg",
+    name: "TP-Link TL-WR850N WiFi Router",
+    description: "High-speed WiFi router for seamless streaming and gaming experience",
+    price: 1390.0,
+    originalPrice: 0.0,
+    image: "/images/router-1.jpg",
   },
   {
     id: 5,
-    name: "Virtual Reality Glasses",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...",
-    price: 1900.0,
-    image: "/images/vr-1.jpg",
+    name: "Tenda F3 300mbps Wireless Router",
+    description: "High-speed WiFi router for seamless streaming and gaming experience",
+    price: 1300.0,
+    originalPrice: 1500.0,
+    image: "/images/router-5.webp",
   },
-  {
-    id: 6,
-    name: "Smartphone Virtual Reality Glasses",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...",
-    price: 1900.0,
-    image: "/images/vf-2.jpg",
-  },
-  {
-    id: 7,
-    name: "Pocket Bluetooth Speaker",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...",
-    price: 1900.0,
-    image: "/images/speaker-2.jpg",
-  },
+  
+  
 ];
 
 export default function ProductList() {
-  const addItem = useCartStore((state) => state.addItem);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 4;
   const totalPages = Math.ceil(products.length / itemsPerPage);
@@ -97,44 +81,39 @@ export default function ProductList() {
             key={product.id}
             className="bg-white rounded-lg overflow-hidden transform transition-transform hover:scale-105 duration-300"
           >
-            <div className="relative h-64">
+            <div className="relative h-56">
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
                 className="object-contain p-4"
               />
-              {product.originalPrice && (
+              {/* {product.originalPrice && (
                 <div className="absolute top-4 left-0 bg-red-600 text-white px-4 py-1">
                   Sale!
                 </div>
-              )}
+              )} */}
             </div>
 
-            <div className="p-6 text-center">
-              <h3 className="text-lg font-bold mb-2">{product.name}</h3>
-              <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                {product.description}
-              </p>
-
+            <div className="p-4 text-center">
+              <h3 className="font-semibold mb-2">{product.name}</h3>
               <div className="space-y-4">
-                <div className="flex items-center justify-center gap-2">
+                <div className="text-sm flex items-center justify-center gap-2 mb-4">
                   {product.originalPrice && (
                     <span className="text-gray-400 line-through">
                       ${product.originalPrice.toFixed(2)}
                     </span>
                   )}
-                  <span className="text-xl font-bold">
+                  <span className="text-sm font-bold">
                     Tk. {product.price.toFixed(2)}
                   </span>
                 </div>
 
-                <Link href="/cart">
+                <Link href="/contacts">
                   <button
-                    onClick={() => addItem(product)}
                     className="w-full py-2 bg-[#709D06] text-white hover:bg-[#688720] transition-colors"
                   >
-                    Add to cart
+                    Buy Now
                   </button>
                 </Link>
               </div>

@@ -4,7 +4,7 @@ const contactInfo = [
   {
     icon: <MapPin className="w-8 h-8 text-red-600" />,
     title: "Location",
-    details: "29 Nicolas str, New York, 987597-50",
+    details: "Priyanka Runway City, Uttara, Dhaka",
   },
   {
     icon: <Phone className="w-8 h-8 text-red-600" />,

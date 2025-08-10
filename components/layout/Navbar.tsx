@@ -12,6 +12,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import LoginModal from "../auth/LoginModal";
+import RegisterModal from "@/components/auth/RegisterModal";
 
 export interface MenuItem {
   title: string;
@@ -96,10 +97,11 @@ function NavItem({ href, text, active, dropdown, className }: NavItemProps) {
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const { isLoggedIn, logout } = useAuthStore();
-  const items = useCartStore((state) => state.items);
+  // const items = useCartStore((state) => state.items);
 
-  const cartQuantity = items.reduce((total, item) => total + item.quantity, 0);
+  // const cartQuantity = items.reduce((total, item) => total + item.quantity, 0);
 
   const handleLogout = () => {
     logout();
@@ -142,7 +144,7 @@ export default function Navbar() {
                   className={`
                     fixed top-0 left-0 h-full w-64 bg-gray-950 text-white z-50 transform transition-transform duration-300 ease-in-out
                     ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}
-                    lg:static lg:translate-x-0 lg:w-auto lg:bg-transparent lg:relative lg:h-auto
+                    lg:translate-x-0 lg:w-auto lg:bg-transparent lg:relative lg:h-auto
                   `}
                   id="navbar"
                 >
@@ -214,12 +216,20 @@ export default function Navbar() {
                     Logout
                   </button>
                 ) : (
-                  <button
-                    onClick={() => setIsLoginModalOpen(true)}
-                    className="px-4 py-2 hover:text-[#709D06] text-sm text-white border rounded-md border-white hover:scale-95 transition-colors"
-                  >
-                    Sign In
-                  </button>
+                  <div className="flex gap-2">
+                    {/* <button
+                      onClick={() => setIsRegisterModalOpen(true)}
+                      className="px-4 py-2 text-sm text-black bg-white rounded-md hover:scale-95 transition-colors"
+                    >
+                      Sign Up
+                    </button> */}
+                    <button
+                      onClick={() => setIsLoginModalOpen(true)}
+                      className="px-4 py-2 hover:text-[#709D06] text-sm text-white border rounded-md border-white hover:scale-95 transition-colors"
+                    >
+                      Sign In
+                    </button>
+                  </div>
                 )}
               </div>
 
@@ -237,10 +247,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      <LoginModal
-        isOpen={isLoginModalOpen}
-        onClose={() => setIsLoginModalOpen(false)}
-      />
+      <LoginModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
+      <RegisterModal isOpen={isRegisterModalOpen} onClose={() => setIsRegisterModalOpen(false)} />
     </>
   );
 }

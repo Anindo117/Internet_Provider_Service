@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // Use default server output so API routes can run (DB + server runtime)
+  eslint: { ignoreDuringBuilds: true },
   images: { unoptimized: true },
 };
 

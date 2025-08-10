@@ -1,4 +1,5 @@
 import RegistrationForm from "@/components/my-account/RegistrationForm";
+import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,6 +13,9 @@ export default function MyAccountPage() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl font-bold mb-8">Register for Connection</h1>
+          <p className="mb-6 text-gray-600">
+            Already have an account? <Link className="text-red-600" href="/">Sign in</Link>
+          </p>
           <RegistrationForm />
         </div>
       </div>

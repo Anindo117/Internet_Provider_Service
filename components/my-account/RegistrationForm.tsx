@@ -2,6 +2,7 @@
 
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Package, User } from "lucide-react";
+import router from "next/router";
 import { useState } from "react";
 
 const packages = [
@@ -63,17 +64,20 @@ export default function RegistrationForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || "Registration failed");
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
       toast({
-        title: "Registration Successful!",
-        description: "We'll contact you shortly to schedule the installation.",
+        title: "Registration successful",
+        description: "We will contact you to schedule the installation.",
         duration: 5000,
       });
-
-      // Reset form
       setFormData({
         firstName: "",
         lastName: "",
@@ -84,7 +88,12 @@ export default function RegistrationForm() {
         zipCode: "",
         selectedPackage: "",
       });
-    }, 2000);
+      router.push("/")
+    } catch (err: any) {
+      toast({ title: "Error", description: err.message, variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

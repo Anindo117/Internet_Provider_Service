@@ -2,29 +2,22 @@
 
 import { useEffect } from "react";
 import { X } from "lucide-react";
-import LoginForm from "@/components/my-account/LoginForm";
-import RegisterModal from "@/components/auth/RegisterModal";
-import { useState } from "react";
+import RegistrationForm from "@/components/my-account/RegistrationForm";
 
-interface LoginModalProps {
+interface RegisterModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
-  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
+      if (e.key === "Escape") onClose();
     };
-
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
       document.body.style.overflow = "hidden";
     }
-
     return () => {
       document.removeEventListener("keydown", handleEscape);
       document.body.style.overflow = "unset";
@@ -39,7 +32,6 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
         className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
         onClick={onClose}
       />
-
       <div className="relative min-h-screen flex items-center justify-center p-4">
         <div className="relative bg-white rounded-lg shadow-xl w-full max-w-6xl">
           <button
@@ -48,24 +40,13 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
           >
             <X className="w-6 h-6" />
           </button>
-
-          <div className="p-2">
-            <LoginForm onSuccess={onClose} onOpenRegister={() => setIsRegisterOpen(true)} />
-            <div className="px-6 pb-6 -mt-4">
-              <p className="text-center text-sm text-gray-600">
-                Don&apos;t have an account?{" "}
-                <button
-                  className="font-medium text-red-600 hover:text-red-500"
-                  onClick={() => setIsRegisterOpen(true)}
-                >
-                  Sign up now
-                </button>
-              </p>
-            </div>
+          <div className="p-6">
+            <RegistrationForm />
           </div>
         </div>
       </div>
-      <RegisterModal isOpen={isRegisterOpen} onClose={() => setIsRegisterOpen(false)} />
     </div>
   );
 }
+
+

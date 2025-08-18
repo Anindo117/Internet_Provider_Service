@@ -148,7 +148,7 @@ export default function RegistrationForm() {
               required
               value={formData.firstName}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2  focus:border-transparent"
+              className="w-full px-4 py-1 border rounded-md focus:ring-2  focus:border-transparent"
             />
           </div>
           <div>
